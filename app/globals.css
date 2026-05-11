@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #F4F4F2;
+    --fg: #0B0D10;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: #0B0D10;
+    color: #F4F4F2;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-6 md:px-10;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-iron;
+  }
+
+  .display {
+    @apply font-sans font-medium tracking-tighter2 text-forge;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-none border px-5 py-3 text-sm font-medium transition-colors duration-150;
+  }
+
+  .btn-primary {
+    @apply btn border-forge bg-forge text-mist hover:bg-ember hover:border-ember;
+  }
+
+  .btn-secondary {
+    @apply btn border-forge/20 bg-transparent text-forge hover:border-forge hover:bg-forge hover:text-mist;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-1 text-sm font-medium text-forge underline-offset-4 hover:underline;
+  }
+
+  .hairline {
+    @apply border-hairline;
+  }
+
+  .card {
+    @apply border border-hairline bg-paper p-7 transition-colors duration-200 hover:border-forge;
+  }
+
+  .field-label {
+    @apply mb-2 block font-mono text-[11px] uppercase tracking-[0.18em] text-iron;
+  }
+
+  .field {
+    @apply block w-full border border-hairline bg-paper px-4 py-3 text-[15px] text-forge placeholder-iron focus:border-forge focus:outline-none;
+  }
+
+  .num {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-ember;
+  }
+}
